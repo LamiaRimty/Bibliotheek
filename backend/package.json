@@ -1,0 +1,22 @@
+{
+  "name": "bookbackend",
+  "version": "1.0.0",
+  "description": "This is book store website named Bibliotheek",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "bibliotheek"
+  },
+  "author": "Lamia Jabin Rimty",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.0.2"
+  }
+}
