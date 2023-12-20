@@ -2,7 +2,7 @@ import "./Books.css";
 import { useEffect } from "react";
 import React, { useState } from "react";
 import axios from "axios";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Books = () => {
   const [books, setbooks] = useState([]);
@@ -33,6 +33,9 @@ const Books = () => {
           </div>
         ))}
       </div>
+      <button className="button">
+        <Link to="/addbook">Add a new Book</Link>
+      </button>
     </div>
   );
 };
