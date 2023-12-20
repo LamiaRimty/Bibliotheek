@@ -13,6 +13,7 @@ const db = mysql.createConnection({
 //if there is an auth problem 
 //ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY "bibliotheek123";
 
+app.use(express.json())  //Express SERVER MIDDLEWARE 
 
 app.get("/",(req,res)=>{
     res.json("This is the bibliotheek's bookbackend")
@@ -31,11 +32,12 @@ app.get("/books",(req,res)=>{
 //create a new book
 //INSERT INTO table_name(column_1,column_2,column_3) VALUES (value_1,value_2,value_3);
 app.post("/books",(req,res)=>{
-    const q = "INSERT INTO books(`title`,`desc`,`cover`) VALUES (?)";
+    const q = "INSERT INTO books (`title`,`desc`,`cover`) VALUES (?)";
     const values=[
-        "title from bookbackend",
-        "desc from bookbackend",
-        "cover from bookbackend",
+
+        req.body.title,
+        req.body.desc,
+        req.body.cover,
     ];
 
     db.query(q,[values],(err,data)=>{
