@@ -1,0 +1,76 @@
+
+.delete-btn{
+    background:salmon;
+    background-image: -webkit-linear-gradient(top,salmon,#f08080 );
+    background-image: -moz-linear-gradient(top,salmon,#f08080 );
+    background-image: -ms-linear-gradient(top,salmon ,#f08080 );
+    background-image: -o-linear-gradient(top,salmon,#f08080);
+    background-image: linear-gradient(to bottom,salmon, #f08080);
+    /* -webkit-border-radius: 28;
+    -moz-border-radius: 28; */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 500;
+    color: #ffff;
+    font-size: 18px;
+    padding: 15px;
+    text-decoration: none;
+    display: inline-block;
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+    
+    
+    }
+    
+    .delete-btn:hover {
+    background:white;
+    transform: translateY(-0.2rem);
+    /* background-image: -webkit-linear-gradient(top,plum,#FAF1E4);
+    background-image: -moz-linear-gradient(top, plum,#FAF1E4);
+    background-image: -ms-linear-gradient(top, plum, #FAF1E4);
+    background-image: -o-linear-gradient(top,plum, #FAF1E4);
+    background-image: linear-gradient(to bottom,plum, #FAF1E4); */
+    text-decoration: none;
+    color: salmon;
+    }
+
+
+   
+    
+    .update-btn{
+        background:teal;
+        /* background-image: -webkit-linear-gradient(top,teal,#f08080 );
+        background-image: -moz-linear-gradient(top,teal,#f08080 );
+        background-image: -ms-linear-gradient(top,teal ,#f08080 );
+        background-image: -o-linear-gradient(top,teal,#f08080);
+        background-image: linear-gradient(to bottom,teal, #f08080); */
+        /* -webkit-border-radius: 28;
+        -moz-border-radius: 28; */
+        border-radius: 10px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        font-weight: 500;
+        color: #ffff;
+        font-size: 18px;
+        padding: 15px;
+        text-decoration: none;
+        display: inline-block;
+        width: fit-content;
+        border: none;
+        cursor: pointer;
+        
+        
+        }
+        
+        .update-btn:hover {
+        background:white;
+        transform: translateY(-0.2rem);
+        /* background-image: -webkit-linear-gradient(top,plum,#FAF1E4);
+        background-image: -moz-linear-gradient(top, plum,#FAF1E4);
+        background-image: -ms-linear-gradient(top, plum, #FAF1E4);
+        background-image: -o-linear-gradient(top,plum, #FAF1E4);
+        background-image: linear-gradient(to bottom,plum, #FAF1E4); */
+        text-decoration: none;
+        color: teal;
+        }
+    
