@@ -1,5 +1,7 @@
-import React, { useState } from "react";
 import "./AddBook.css";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AddBook = () => {
   const [book, setbook] = useState({
@@ -10,14 +12,22 @@ const AddBook = () => {
     cover: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setbook((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   // console.log(book);
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
+    try {
+      await axios.post("http://localhost:8800/books", book);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
