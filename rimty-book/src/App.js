@@ -18,11 +18,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Books/>} />
           <Route path="/addbook" element={<AddBook/> }/>
-          <Route path="/updatebook" element={<UpdateBook/>} />
-        {/*   <Route exact path="/details/:id" element={<Details />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/compose" element={<Compose />} /> */}
+          <Route path="/updatebook/:id" element={<UpdateBook/>} />
         </Routes>
         {/* <Footer /> */}
       </div>
