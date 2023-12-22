@@ -46,7 +46,9 @@ const Books = () => {
             >
               Delete
             </button>
-            <button className="update-btn">Update</button>
+            <button className="update-btn">
+              <Link to={`/updatebook/${book.id}`}>Update</Link>
+            </button>
           </div>
         ))}
       </div>
