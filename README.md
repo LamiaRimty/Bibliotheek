@@ -1,2 +1,2 @@
 # Bibliotheek
-A library application with HTML,CSS,Node Js,Express &amp; MongoDB
+A Book library application with HTML,CSS,Node Js,Expressjs ,MySql
