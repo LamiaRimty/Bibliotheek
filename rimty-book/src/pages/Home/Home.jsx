@@ -4,7 +4,7 @@ import Books from "../Books/Books";
 function Home() {
   return (
     <>
-      <section id="home">
+      <section id="Home">
         <div className="container container-home col-xxl-8 px-4 py-4">
           <h1 className="intro animate__animated animate__zoomIn">
             Rimty Bibliotheek📚

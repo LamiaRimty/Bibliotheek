@@ -2,60 +2,69 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <div>
-      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <div class="col-md-3 mb-2 mb-md-0">
-          <a
-            className="navbar-brand animate__animated animate__flip d-inline-flex link-body-emphasis text-decoration-none"
-            href="/"
-          >
+    <section>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand animate__animated animate__flip" href="/">
             <img
               id="header-img"
-              height="30"
+              height="10"
               src="images/rimty-logo.png"
               alt="rimty"
-            />
+            />{" "}
+            Bibliotheek
           </a>
-        </div>
-
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li>
-            <a href="/#" class="nav-link px-2 link-secondary">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/books" class="nav-link px-2">
-              Books
-            </a>
-          </li>
-          <li>
-            <a href="/add book" class="nav-link px-2">
-              Add book
-            </a>
-          </li>
-          <li>
-            <a href="/" class="nav-link px-2">
-              Update book
-            </a>
-          </li>
-          <li>
-            <a href="/" class="nav-link px-2">
-              About
-            </a>
-          </li>
-        </ul>
-
-        <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-outline-primary me-2">
-            Login
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <button type="button" class="btn btn-primary">
-            Sign-up
-          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav nav-pills ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/books">
+                  Books
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/addbook">
+                  Add Book
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/addbook">
+                  Update Book
+                </a>
+              </li>
+            </ul>
+            <ul class="d-flex navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">
+                  Login
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/books">
+                  Signup
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </header>
-    </div>
+      </nav>
+    </section>
   );
 };
 
