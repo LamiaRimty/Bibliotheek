@@ -1,0 +1,49 @@
+book-
+The Little book of cprogramming
+author:
+Huw Collingbourne
+
+
+pickup: 
+Get it by Friday, March 27 - Wednesday, April 8
+
+price:
+1,095.76(BDT)
+
+decription:
+The fastest, easiest way to learn to program C.This book will teach you to program the C language from the ground up.You will learn everything from the fundamentals of programming right through to the complexities of pointers, addresses and File IO. Maybe you’ve tried to master C before but failed. Or maybe you are new to C or new to programming. If so, this is the book for you!
+
+
+
+book:
+The C++ Programming Language
+Author:
+Bjarne Stroustrup
+
+Pickup:
+Get it as soon as Thursday, March 26 at Kajla
+
+price:
+4,383.87(BDT)
+
+Description:
+This book features an enhanced, layflat binding, which allows the book to stay open more easily when placed on a flat surface. This special binding method—noticeable by a small space inside the spine—also increases durability. C++11 has arrived: thoroughly master it, with the definitive new guide from C++ creator Bjarne Stroustrup, C++ Programming Language, Fourth Edition! The brand-new edition of the worlds most trusted and widely read guide to C++, it has been comprehensively updated for the long-awaited C++11 standard. Extensively rewritten to present the C++11 language, standard library, and key design techniques as an integrated whole, Stroustrup thoroughly addresses changes that make C++11 feel like a whole new language, offering definitive guidance for leveraging its improvements in performance, reliability, and clarity. C++ programmers around the world recognize Bjarne Stoustrup as the go-to expert for the absolutely authoritative and exceptionally useful information they need to write outstanding C++ programs. Now, as C++11 compilers arrive and development organizations migrate to the new standard, they know exactly where to turn once more: Stoustrup C++ Programming Language, Fourth Edition.
+
+book:
+Web Design with HTML, CSS, JavaScript and jQuery Set
+
+author:
+Jon Duckett 
+
+Price:
+2,276.71(BDT)
+
+pickup:
+Get it by Thursday, March 26
+
+description:
+A two-book set for web designers and front-end developers
+This two-book set combines the titles HTML & CSS: Designing and Building Web Sites and JavaScript & jQuery: Interactive Front-End Development. Together these two books form an ideal platform for anyone who wants to master HTML and CSS before stepping up to JavaScript and jQuery.
+
+HTML & CSS covers structure, text, links, images, tables, forms, useful options, adding style with CSS, fonts, colors, thinking in boxes, styling lists and tables, layouts, grids, and even SEO, Google analytics, ftp, and HTML5. JavaScript & jQuery offers an excellent combined introduction to these two technologies using a clear and simple visual approach using diagrams, infographics, and photographs.
+
