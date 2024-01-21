@@ -3,6 +3,9 @@
     --bs-nav-pills-link-active-color: #fff;
     --bs-nav-pills-link-active-bg: navajowhite;
 }
+.navbar{
+    background-color: var(--body-color);
+}
 .navbar-brand{
     /* right: 100px; */
     font-size: 40px;

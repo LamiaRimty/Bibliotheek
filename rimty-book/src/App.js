@@ -8,7 +8,7 @@ import Home from "./pages/Home/Home";
 import Books from "./pages/Books/Books";
 import AddBook from "./pages/AddBook/AddBook";
 import UpdateBook from "./pages/UpdateBook/UpdateBook";
-import "./styles.css"
+
 
 function App() {
   return (
