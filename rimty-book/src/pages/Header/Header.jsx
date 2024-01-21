@@ -2,7 +2,7 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <section>
+    <section id="header">
       <nav class="navbar navbar-expand-lg bg-body-">
         <div class="container-fluid">
           <a class="navbar-brand animate__animated animate__flip" href="/">
@@ -51,12 +51,12 @@ const Header = () => {
             </ul>
             <ul class="d-flex navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="/login">
                   Login
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/books">
+                <a class="nav-link" href="/signup">
                   Signup
                 </a>
               </li>

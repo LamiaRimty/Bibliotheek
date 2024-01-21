@@ -1,0 +1,22 @@
+.foorterImg{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.footer-intro{
+    font-weight: 500;
+ 
+}
+.footer-brand{
+  
+    font-size: 20px;
+}
+
+
+
+
+
+.footer-intro , .footer-copy,.footer-brand, .footer-icon{
+    color: #FAF1E4;
+}

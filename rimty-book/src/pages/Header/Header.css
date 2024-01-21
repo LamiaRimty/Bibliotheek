@@ -5,12 +5,14 @@
 }
 .navbar{
     background-color: var(--body-color);
+  
+background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
 }
 .navbar-brand{
     /* right: 100px; */
     font-size: 40px;
     font-weight: bold;
-    font-family: cursive;
+    font-family: fantasy;
     color:var(--text-color);
     cursor: pointer;
 
@@ -39,12 +41,12 @@
 }
 
 .nav-link:hover{
-    color: #C21292;
+    color:black;
 }
 
 #active-nav{
     font-weight:500 ;
-    color:plum;
+    color: #fff;
 }
 
 

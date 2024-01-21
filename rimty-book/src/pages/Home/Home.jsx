@@ -6,15 +6,14 @@ function Home() {
     <>
       <section id="home">
         {/* <div className="container col-xxl-8 px-4 py-4"> */}
-        <div className="cover">
+        <div className="cover animate__animated animate__fadeInDown">
           <div className="overlay"></div>
           <img
             className="home-img"
             src="./images/book-shelf-landscape.jpg"
             alt="cover"
           />
-          <div className="content">
-            {/* <h1>Bibliotheek</h1> */}
+          <div className="content animate__animated animate__zoomIn 2s">
             <form class="d-flex" role="search">
               <input
                 class="form-control me-2"
