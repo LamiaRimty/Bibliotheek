@@ -26,7 +26,7 @@
  --title-color:  white;
  --text-color:#FFFBE9;
   --text-color-light:#E3CAA5;
- --input-color:#f9f9f9f9;
+ --input-color:#f9f9f9;
  --body-color: #AD8B73;
  --container-color:#CEAB93;
  --scroll-bar-color:#CEDEBD;
@@ -124,7 +124,7 @@ text-align: center;
 }
 
 .button{
-  background:indigo;
+  background:#A9907E;
   background-image: -webkit-linear-gradient(top,indigo,#f08080 );
   background-image: -moz-linear-gradient(top,indigo,#f08080 );
   background-image: -ms-linear-gradient(top,indigo ,#f08080 );

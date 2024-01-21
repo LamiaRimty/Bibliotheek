@@ -51,7 +51,7 @@ const Header = () => {
             </ul>
             <ul class="d-flex navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">
+                <a class="nav-link" href="/">
                   Login
                 </a>
               </li>

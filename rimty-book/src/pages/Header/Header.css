@@ -11,9 +11,8 @@
     font-size: 40px;
     font-weight: bold;
     font-family: cursive;
-    color:saddlebrown;
+    color:var(--text-color);
     cursor: pointer;
-    
 
   }
 
