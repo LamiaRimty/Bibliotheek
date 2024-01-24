@@ -1,6 +1,7 @@
 import express from "express"
 import mysql from "mysql"
 import cors from "cors"
+import multer from 'multer';
 
 const app= express()
 
@@ -14,8 +15,25 @@ const db = mysql.createConnection({
 //if there is an auth problem 
 //ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY "bibliotheek123";
 
+
+
+// Multer configuration for handling image uploads
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/'); // Create a folder named 'uploads' to store uploaded images
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '-' + file.originalname); // Set the filename to be unique
+  },
+});
+const upload = multer({ storage: storage });
+
+
+
+
 app.use(express.json())  //Express SERVER MIDDLEWARE 
 app.use(cors())//active axios localhost to Books.jsx
+app.use('/uploads', express.static('uploads'));
 
 
 app.get("/",(req,res)=>{
