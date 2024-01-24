@@ -7,7 +7,7 @@
     text-align: center;
 } */
 
-.books{
+/* .books{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,7 +27,58 @@ img{
     width: 200px;
     object-fit: cover;
     background-color:#ABC4AA;
-}
+} */
+
+/* .cards{
+ height: 100px;
+ width: 400px;
+} */
+
+.cards_item{
+    background:var(--first-color);
+    padding: 5px;
+    border-radius:10px;
+    transition: var(-transition);
+    margin: 10px;
+
+ }
+ 
+ .cards_item:hover{
+     border:1px solid var(--first-color-2nd);
+     background: transparent;
+ }
+ 
+   .card-title {
+     margin: 1.2rem 0;
+     font-size: 20px;
+     font-family:var(--body-font);
+     font-weight: 700;
+     color: var(--title-color);
+     cursor: pointer;
+     text-decoration: none;
+     text-align: left;
+   }
+  
+ 
+ .card-author{
+     font-size: 16px;
+     color: var( --text-color-light);
+     font-weight:medium; 
+     text-align: left;
+     /* font-family: var(--body-font); */
+ }
+ .card-author:hover{
+     color:teal;
+ }
+ 
+ 
+ 
+ 
+ 
+ .link{
+     outline: none;
+     color: transparent;
+ }
 .delete-btn{
     background:salmon;
     background-image: -webkit-linear-gradient(top,salmon,#f08080 );

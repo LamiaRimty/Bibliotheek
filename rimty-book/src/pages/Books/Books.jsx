@@ -19,42 +19,62 @@ const Books = () => {
     fetchAllBooks();
   }, []);
 
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete("http://localhost:8800/books/" + id);
-      window.location.reload();
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const handleDelete = async (id) => {
+  //   try {
+  //     await axios.delete("http://localhost:8800/books/" + id);
+  //     window.location.reload();
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   return (
-    <div>
-      <div id="books">
-        {books.map((book) => (
-          <div className="book" key={book.id}>
-            {book.cover && <img src={book.cover} alt="book-img" />}
-            <h2>{book.title}</h2>
-            <h4>{book.author}</h4>
-            <p>{book.desc}</p>
-            <span>{book.price}</span>
+    <section id="books">
+      <div className="container">
+        <div className="row">
+          {books.map((book) => (
+            <Link to={`/book/${book.id}`}>
+              <div
+                className="col main animate__animated animate__zoomInUp"
+                key={book.id}
+              >
+                {/* <p>{book.desc}</p>
+              <span>{book.price}</span> */}
 
-            <button
-              className="delete-btn"
-              onClick={() => handleDelete(book.id)}
-            >
-              Delete
-            </button>
-            <button className="update-btn">
-              <Link to={`/updatebook/${book.id}`}>Update</Link>
-            </button>
-          </div>
-        ))}
-      </div>
-      <button className="button">
+                <ul className="cards">
+                  <li className="cards_item">
+                    <div className="card">
+                      <div className="card_image">
+                        <img
+                          src={`http://localhost:8800/uploads/${book.cover}`}
+                          alt="books-img"
+                        />
+                      </div>
+                      <div className="card_content">
+                        <h2 className="card-title">{book.title}</h2>
+                        <p className="card-author">{book.author}</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                {/* <button
+                className="delete-btn"
+                onClick={() => handleDelete(book.id)}
+              >
+                Delete
+              </button>
+              <button className="update-btn">
+                <Link to={`/updatebook/${book.id}`}>Update</Link>
+              </button> */}
+              </div>
+            </Link>
+          ))}
+        </div>
+        {/* <button className="button">
         <Link to="/addbook">Add a new Book</Link>
-      </button>
-    </div>
+      </button> */}
+      </div>
+    </section>
   );
 };
 
