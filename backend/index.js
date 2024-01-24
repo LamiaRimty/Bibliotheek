@@ -50,6 +50,17 @@ app.get("/books",(req,res)=>{
   })
 })
 
+app.get("/book/:id",(req,res)=>{
+  const bookId = req.params.id;
+  const q = "SELECT * FROM testbook.books WHERE id = ?"
+
+  db.query(q,[blogId],(err,data)=>{
+  
+    if (err) throw err;
+      res.json(data[0]);
+    });
+  })
+
 //create a new book
 //INSERT INTO table_name(column_1,column_2,column_3) VALUES (value_1,value_2,value_3);
 app.post("/books",(req,res)=>{
