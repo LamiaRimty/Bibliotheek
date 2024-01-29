@@ -19,15 +19,6 @@ const Books = () => {
     fetchAllBooks();
   }, []);
 
-  // const handleDelete = async (id) => {
-  //   try {
-  //     await axios.delete("http://localhost:8800/books/" + id);
-  //     window.location.reload();
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
   return (
     <section id="books">
       <div className="container">
@@ -47,12 +38,13 @@ const Books = () => {
                       <div className="card_image">
                         <img
                           src={`http://localhost:8800/uploads/${book.cover}`}
-                          alt="books-img"
+                          alt="card_image"
                         />
                       </div>
                       <div className="card_content">
                         <h2 className="card-title">{book.title}</h2>
                         <p className="card-author">{book.author}</p>
+                        <p className="card-price">{book.price}</p>
                       </div>
                     </div>
                   </li>

@@ -41,8 +41,8 @@ function Book() {
       await axios.put(`http://localhost:8800/book/${id}`, {
         cover: book.cover,
         title,
-        price: book.price,
         author: book.author,
+        price: book.price,
         desc,
       });
       console.log(2);
@@ -59,13 +59,13 @@ function Book() {
     <>
       <section id="book">
         {book ? (
-          <article className="singleBlog">
+          <article className="singleBook">
             <div className="container px-4 py-1 my-5 text-center" key={book.id}>
               <div>
                 <img
                   className="book-img img-fluid border rounded-3 shadow-lg d-block  mx-auto mb-4"
                   src={`http://localhost:8800/uploads/${book.cover}`}
-                  alt=""
+                  alt="book-img"
                 />
               </div>
               {updateMode ? (
@@ -82,9 +82,9 @@ function Book() {
               )}
 
               <div className="date-edit d-flex">
+                <p className="author">📝{book.author}</p>
                 <p className="price">💵 {book.price}</p>
-                <p className="author">💵 {book.author}</p>
-                <div className="buttons blogEdit">
+                <div className="buttons bookEdit">
                   <button
                     className="btn update-btn"
                     onClick={() => setUpdateMode(true)}
