@@ -5,69 +5,125 @@ import { useNavigate } from "react-router-dom";
 
 const AddBook = () => {
   const [book, setbook] = useState({
+    cover: null,
     title: "",
     author: "",
-    desc: "",
     price: null,
-    cover: "",
+    desc: "",
   });
 
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setbook((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleFileChange = (e) => {
+    setbook({ ...book, [e.target.name]: e.target.value });
+  };
+  const handleInputChange = (e) => {
+    setbook({ ...book, [e.target.name]: e.target.value });
   };
 
   // console.log(book);
-
-  const handleClick = async (e) => {
+  const handleAddBook = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8800/books", book);
+      const formData = new FormData();
+      formData.append("image", book.cover);
+      formData.append("title", book.title);
+      formData.append("time", book.author);
+      formData.append("qoute", book.price);
+      formData.append("desc", book.desc);
+      await axios.post("http://localhost:8800/books", formData);
       navigate("/");
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log("Error creating book:", error);
     }
   };
 
   return (
-    <div id="addbook" className="form">
-      <h1>Add New Book</h1>
-      <input
-        type="text"
-        placeholder="title"
-        onChange={handleChange}
-        name="title"
-      />
-      <input
-        type="text"
-        placeholder="author"
-        onChange={handleChange}
-        name="author"
-      />
-      <input
-        type="text"
-        placeholder="desc"
-        onChange={handleChange}
-        name="desc"
-      />
-      <input
-        type="number"
-        placeholder="price"
-        onChange={handleChange}
-        name="price"
-      />
-      <input
-        type="text"
-        placeholder="cover"
-        onChange={handleChange}
-        name="cover"
-      />
+    <>
+      <section id="addbook">
+        <div className="container-compose">
+          <div className="container">
+            {/* {file && (
+              <img
+                className="composeImg"
+                src={URL.createObjectURL(file)}
+                alt="composeImg"
+              />
+            )} */}
+          </div>
+          <form className="composeForm" action="/submit" method="post">
+            <div className="composeFormGroup flexCenter">
+              <label>Cover Photo</label>
+              <input
+                id="fileInput"
+                onChange={handleFileChange}
+                accept="image/*"
+                className="composeBlog"
+                type="file"
+                autoFocus={true}
+                name="cover"
+              />
+            </div>
+            <div className="composeFormGroup">
+              <label>Title</label>
+              <input
+                onChange={handleInputChange}
+                className="composeBlog"
+                type="text"
+                name="title"
+                placeholder="title"
+                autoFocus={true}
+              />
+            </div>
+            <div className="composeFormGroup">
+              <label>Author</label>
+              <input
+                onChange={handleInputChange}
+                className="composeBlog"
+                type="text"
+                placeholder="author"
+                autoFocus={true}
+                name="author"
+              />
+            </div>
 
-      <button className="button" onClick={handleClick}>
-        Add
-      </button>
-    </div>
+            <div className="composeFormGroup">
+              <label>Price</label>
+              <input
+                onChange={handleInputChange}
+                className="composeBlog"
+                type="text"
+                placeholder="price"
+                autoFocus={true}
+                name="price"
+              />
+            </div>
+
+            <div className="composeFormGroup" id="composeEdit">
+              <label>Description</label>
+              <textarea
+                onChange={handleInputChange}
+                className="composeBlog"
+                type="text"
+                placeholder="Write a blog..."
+                cols="59"
+                rows="10"
+                name="desc"
+              ></textarea>
+            </div>
+
+            <button
+              className="button composeBlogBtn"
+              type="submit"
+              autoComplete="off"
+              onClick={handleAddBook}
+            >
+              Publish
+            </button>
+          </form>
+        </div>
+      </section>
+    </>
   );
 };
 export default AddBook;

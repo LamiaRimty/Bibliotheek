@@ -63,7 +63,7 @@ function Book() {
             <div className="container px-4 py-1 my-5 text-center" key={book.id}>
               <div>
                 <img
-                  className="blogPost-img img-fluid border rounded-3 shadow-lg d-block  mx-auto mb-4"
+                  className="book-img img-fluid border rounded-3 shadow-lg d-block  mx-auto mb-4"
                   src={`http://localhost:8800/uploads/${book.cover}`}
                   alt=""
                 />
@@ -83,7 +83,7 @@ function Book() {
 
               <div className="date-edit d-flex">
                 <p className="price">💵 {book.price}</p>
-                <p className="author">📝 {book.author}</p>
+                <p className="author">💵 {book.author}</p>
                 <div className="buttons blogEdit">
                   <button
                     className="btn update-btn"

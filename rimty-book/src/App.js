@@ -7,6 +7,7 @@ import Header from "./pages/Header/Header";
 import Footer from "./pages/Footer/Footer";
 import Home from "./pages/Home/Home";
 import Books from "./pages/Books/Books";
+import Book from "./pages/Book/Book";
 import AddBook from "./pages/AddBook/AddBook";
 import UpdateBook from "./pages/UpdateBook/UpdateBook";
 
@@ -20,6 +21,7 @@ function App() {
         <Routes>
         <Route exact path="/" element={<Home/>} />
           <Route path="/books" element={<Books/>} />
+          <Route exact path="/book/:id" element={<Book />} />
           <Route path="/addbook" element={<AddBook/> }/>
           <Route path="/updatebook/:id" element={<UpdateBook/>} />
         </Routes>
