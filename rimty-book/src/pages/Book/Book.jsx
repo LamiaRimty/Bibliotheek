@@ -81,7 +81,7 @@ function Book() {
                 </>
               )}
 
-              <div className="date-edit d-flex">
+              <div className="authorprice-edit d-flex">
                 <p className="author">📝{book.author}</p>
                 <p className="price">💵 {book.price}</p>
                 <div className="buttons bookEdit">

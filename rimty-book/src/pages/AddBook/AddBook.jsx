@@ -8,14 +8,14 @@ const AddBook = () => {
     cover: null,
     title: "",
     author: "",
-    price: null,
+    price: "",
     desc: "",
   });
 
   const navigate = useNavigate();
 
   const handleFileChange = (e) => {
-    setbook({ ...book, [e.target.name]: e.target.value });
+    setbook({ ...book, cover: e.target.files[0] });
   };
   const handleInputChange = (e) => {
     setbook({ ...book, [e.target.name]: e.target.value });
@@ -105,7 +105,7 @@ const AddBook = () => {
                 onChange={handleInputChange}
                 className="composeBlog"
                 type="text"
-                placeholder="Write a blog..."
+                placeholder="Write a description..."
                 cols="59"
                 rows="10"
                 name="desc"

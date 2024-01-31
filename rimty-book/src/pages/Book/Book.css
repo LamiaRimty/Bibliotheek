@@ -14,13 +14,13 @@
     object-fit: cover; */
 }
 
-.date-edit{
+.authorprice{
     justify-content:space-between;
     align-items:center; 
 }
 
-.date{
-    color: gray;
+.author .price {
+    color:var(--first-color);
     font-size: 14px;
     font-weight: regular;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
