@@ -8,14 +8,14 @@ import axios from "axios";
 
 function Book() {
   const { id } = useParams();
-  const [book, setBook] = useState([]);
+  const [bookPost, setBookPost] = useState([]);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [updateMode, setUpdateMode] = useState(false);
 
   const fetchBookDetails = async () => {
     const res = await axios.get(`http://localhost:8800/book/${id}`);
-    setBook(res.data);
+    setBookPost(res.data);
     setTitle(res.data.title);
     setDesc(res.data.desc);
   };
@@ -39,10 +39,10 @@ function Book() {
     console.log(1);
     try {
       await axios.put(`http://localhost:8800/book/${id}`, {
-        cover: book.cover,
+        cover: bookPost.cover,
         title,
-        author: book.author,
-        price: book.price,
+        author: bookPost.author,
+        price: bookPost.price,
         desc,
       });
       console.log(2);
@@ -58,20 +58,23 @@ function Book() {
   return (
     <>
       <section id="book">
-        {book ? (
+        {bookPost ? (
           <article className="singleBook">
-            <div className="container px-4 py-1 my-5 text-center" key={book.id}>
+            <div
+              className="container px-4 py-1 my-5 text-center"
+              key={bookPost.id}
+            >
               <div>
                 <img
                   className="book-img img-fluid border rounded-3 shadow-lg d-block  mx-auto mb-4"
-                  src={`http://localhost:8800/uploads/${book.cover}`}
+                  src={`http://localhost:8800/uploads/${bookPost.cover}`}
                   alt="book-img"
                 />
               </div>
               {updateMode ? (
                 <input
                   type="text"
-                  value={title}
+                  value={bookPost.title}
                   className="singleTitle"
                   onChange={(e) => setTitle(e.target.value)}
                 />
@@ -82,8 +85,8 @@ function Book() {
               )}
 
               <div className="authorprice-edit d-flex">
-                <p className="author">📝{book.author}</p>
-                <p className="price">💵 {book.price}</p>
+                <p className="author">📝{bookPost.author}</p>
+                <p className="price">💵 {bookPost.price}</p>
                 <div className="buttons bookEdit">
                   <button
                     className="btn update-btn"

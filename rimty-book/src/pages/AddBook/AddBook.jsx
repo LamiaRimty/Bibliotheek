@@ -26,10 +26,10 @@ const AddBook = () => {
     e.preventDefault();
     try {
       const formData = new FormData();
-      formData.append("image", book.cover);
+      formData.append("cover", book.cover);
       formData.append("title", book.title);
-      formData.append("time", book.author);
-      formData.append("qoute", book.price);
+      formData.append("author", book.author);
+      formData.append("price", book.price);
       formData.append("desc", book.desc);
       await axios.post("http://localhost:8800/books", formData);
       navigate("/");
@@ -57,7 +57,7 @@ const AddBook = () => {
               <input
                 id="fileInput"
                 onChange={handleFileChange}
-                accept="image/*"
+                accept="cover/*"
                 className="composeBlog"
                 type="file"
                 autoFocus={true}

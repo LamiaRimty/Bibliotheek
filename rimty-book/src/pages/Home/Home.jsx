@@ -14,15 +14,15 @@ function Home() {
             alt="cover"
           />
           <div className="content animate__animated animate__zoomIn 2s">
-            <form class="d-flex" role="search">
+            <form className="d-flex" role="search">
               <input
-                class="form-control me-2"
+                className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
               <button
-                class="btn home-btn btn-outline-light btn-lg"
+                className="btn home-btn btn-outline-light btn-lg"
                 type="submit"
               >
                 Search

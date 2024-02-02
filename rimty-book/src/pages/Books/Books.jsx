@@ -24,19 +24,14 @@ const Books = () => {
       <div className="container">
         <div className="row">
           {books.map((book) => (
-            <Link to={`/book/${book.id}`}>
-              <div
-                className="col main animate__animated animate__zoomInUp"
-                key={book.id}
-              >
-                {/* <p>{book.desc}</p>
-              <span>{book.price}</span> */}
-
+            <Link to={`/book/${book.id}`} className="link" key={book.id}>
+              <div className="col main animate__animated animate__zoomInUp">
                 <ul className="cards">
                   <li className="cards_item">
                     <div className="card">
                       <div className="card_image">
                         <img
+                          className="books-img"
                           src={`http://localhost:8800/uploads/${book.cover}`}
                           alt="card_image"
                         />

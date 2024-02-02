@@ -33,7 +33,12 @@ img{
  height: 100px;
  width: 400px;
 } */
-
+.books-img{
+    height: 300px;
+    width: 200px;
+    
+    background-color:#ABC4AA;
+}
 .cards_item{
     background:var(--first-color);
     padding: 5px;
