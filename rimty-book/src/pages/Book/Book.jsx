@@ -61,7 +61,7 @@ function Book() {
         {bookPost ? (
           <article className="singleBook">
             <div
-              className="container px-4 py-1 my-5 text-center"
+              className="container wrapper px-4 py-1 my-5 text-center"
               key={bookPost.id}
             >
               <div>
@@ -74,8 +74,8 @@ function Book() {
               {updateMode ? (
                 <input
                   type="text"
-                  value={bookPost.title}
-                  className="singleTitle"
+                  value={title}
+                  className="singleTitleInput"
                   onChange={(e) => setTitle(e.target.value)}
                 />
               ) : (
@@ -89,7 +89,7 @@ function Book() {
                 <p className="price">💵 {bookPost.price}</p>
                 <div className="buttons bookEdit">
                   <button
-                    className="btn update-btn"
+                    className="button update-btn"
                     onClick={() => setUpdateMode(true)}
                   >
                     <BsPencilSquare />
@@ -103,7 +103,7 @@ function Book() {
 
               {updateMode ? (
                 <textarea
-                  className="singlePostDesc"
+                  className="singlePostDescInput"
                   value={desc}
                   onChange={(e) => setDesc(e.target.value)}
                 />

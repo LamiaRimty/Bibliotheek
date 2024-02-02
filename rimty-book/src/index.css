@@ -65,7 +65,7 @@ body {
   /* background-color: var(--body-color); */
   /* background-color:var(--body-color); */
   
-background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+/* background-image: url("https://www.transparenttextures.com/patterns/cartographer.png"); */
   font-family:'Lora', serif;;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -149,7 +149,7 @@ text-align: center;
   
   .button:hover {
   background:plum;
-  transform: translateY(-0.5rem);
+  transform: translateY(-0.1rem);
   background-image: -webkit-linear-gradient(top,plum,#FAF1E4);
   background-image: -moz-linear-gradient(top, plum,#FAF1E4);
   background-image: -ms-linear-gradient(top, plum, #FAF1E4);
