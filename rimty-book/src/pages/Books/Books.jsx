@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { MdEuroSymbol } from "react-icons/md";
 
 const Books = () => {
   const [books, setbooks] = useState([]);
@@ -22,6 +23,9 @@ const Books = () => {
   return (
     <section id="books">
       <div className="container">
+        {/* Card Experiment */}
+
+        {/* Card Experiment */}
         <div className="row">
           {books.map((book) => (
             <Link to={`/book/${book.id}`} className="link" key={book.id}>
@@ -39,7 +43,9 @@ const Books = () => {
                       <div className="card_content">
                         <h2 className="card-title">{book.title}</h2>
                         <p className="card-author">{book.author}</p>
-                        <p className="card-price">{book.price}</p>
+                        <p className="card-price">
+                          {book.price} <MdEuroSymbol />
+                        </p>
                       </div>
                     </div>
                   </li>

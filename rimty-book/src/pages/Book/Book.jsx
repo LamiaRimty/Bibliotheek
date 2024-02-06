@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import "./Book.css";
 import { BsPencilSquare } from "react-icons/bs";
 import { AiOutlineDelete } from "react-icons/ai";
+import { MdEuroSymbol } from "react-icons/md";
 import axios from "axios";
 
 function Book() {
@@ -86,7 +87,10 @@ function Book() {
 
               <div className="authorprice-edit d-flex">
                 <p className="author">📝{bookPost.author}</p>
-                <p className="price">💵 {bookPost.price}</p>
+                <p className="price">
+                  💵 {bookPost.price}
+                  <MdEuroSymbol />
+                </p>
                 <div className="buttons bookEdit">
                   <button
                     className="button update-btn"

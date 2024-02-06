@@ -33,12 +33,27 @@ img{
  height: 100px;
  width: 400px;
 } */
+
+:root {
+    --card-height: 300px;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+  * {
+    box-sizing: border-box;
+  }
+
+/* css Eexperi */
+
+/* css experi */
+
 .books-img{
     height: 300px;
     width: 200px;
     
     background-color:#ABC4AA;
 }
+
+
 .cards_item{
     background:var(--first-color);
     padding: 5px;
@@ -70,7 +85,7 @@ img{
      color: var( --text-color-light);
      font-weight:medium; 
      text-align: left;
-     /* font-family: var(--body-font); */
+   
  }
  .card-author:hover{
      color:teal;

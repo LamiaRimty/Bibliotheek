@@ -62,10 +62,10 @@ body {
   min-height: 100vh;
   overflow-x:hidden ;
   height: 100%;
-  /* background-color: var(--body-color); */
-  /* background-color:var(--body-color); */
+  background-color: var(--body-color);
+ 
   
-/* background-image: url("https://www.transparenttextures.com/patterns/cartographer.png"); */
+background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
   font-family:'Lora', serif;;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
