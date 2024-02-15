@@ -53,13 +53,13 @@ export default function Feature() {
               <div className="feature-box">
                 <Link to={`/book/${book.id}`} className="link" key={book.id}>
                   <img
-                    className="books-img"
+                    className="feature-img"
                     src={`http://localhost:8800/uploads/${book.cover}`}
-                    alt="card_image"
+                    alt="feature_image"
                   />
 
                   <div className="feature-info">
-                    <p className="feature-title">{book.title}</p>
+                    <h4 className="feature-title">{book.title}</h4>
                     <small className="feature-author">{book.author}</small>
                     <h5 className="feature-price">
                       {book.price} <MdEuroSymbol />

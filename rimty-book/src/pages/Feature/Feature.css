@@ -25,3 +25,23 @@
   .feature-info{
     color: bisque;
   }
+
+  .feature-container{
+ position: relative;
+  }
+
+  .feature-box{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .feature-img{
+    background:burlywood;
+  }
+.feature-info{
+ margin-top: 8px;
+ margin-bottom: 20px;
+}
