@@ -10,7 +10,7 @@ import Books from "./pages/Books/Books";
 import Book from "./pages/Book/Book";
 import AddBook from "./pages/AddBook/AddBook";
 import UpdateBook from "./pages/UpdateBook/UpdateBook";
-
+import Feature from "./pages/Feature/Feature";
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
         <Header />
         <Routes>
         <Route exact path="/" element={<Home/>} />
+        <Route path="/feature" element={<Feature/>} />
           <Route path="/books" element={<Books/>} />
           <Route exact path="/book/:id" element={<Book />} />
           <Route path="/addbook" element={<AddBook/> }/>

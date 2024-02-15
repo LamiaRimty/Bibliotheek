@@ -1,5 +1,6 @@
 import "./Home.css";
-// import Books from "../Books/Books";
+import Books from "../Books/Books";
+import Feature from "../Feature/Feature";
 
 function Home() {
   return (
@@ -32,8 +33,8 @@ function Home() {
           </div>
         </div>
       </section>
-
-      {/* <Books /> */}
+      <Feature />
+      <Books />
     </>
   );
 }

@@ -50,22 +50,10 @@ const Books = () => {
                     </div>
                   </li>
                 </ul>
-                {/* <button
-                className="delete-btn"
-                onClick={() => handleDelete(book.id)}
-              >
-                Delete
-              </button>
-              <button className="update-btn">
-                <Link to={`/updatebook/${book.id}`}>Update</Link>
-              </button> */}
               </div>
             </Link>
           ))}
         </div>
-        {/* <button className="button">
-        <Link to="/addbook">Add a new Book</Link>
-      </button> */}
       </div>
     </section>
   );

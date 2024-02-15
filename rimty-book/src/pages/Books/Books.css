@@ -29,22 +29,36 @@ img{
     background-color:#ABC4AA;
 } */
 
-/* .cards{
- height: 100px;
- width: 400px;
-} */
 
-:root {
-    --card-height: 300px;
-    --card-width: calc(var(--card-height) / 1.5);
-  }
-  * {
-    box-sizing: border-box;
-  }
+
 
 /* css Eexperi */
 
 /* css experi */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+.cards {
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  
+  }
+  .card{
+   
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+ height: 450px;
+ width: 450px;
+}
 
 .books-img{
     height: 300px;
