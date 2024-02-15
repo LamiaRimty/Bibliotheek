@@ -33,7 +33,7 @@ export default function Feature() {
     <section id="feature">
       <h2 className="section-title">Feature books</h2>
       <span className="section-subtitle">Some of my favourite books!</span>
-      <div className="container gallery-container col-xxl-8 px-2 py-3">
+      <div className="container feature-container col-xxl-8 px-2 py-3">
         <Swiper
           slidesPerView={3}
           spaceBetween={30}
@@ -47,7 +47,29 @@ export default function Feature() {
           }}
           modules={[Autoplay, Pagination]}
           className="mySwiper"
-        ></Swiper>
+        >
+          {books.map((book) => (
+            <SwiperSlide key={book.id}>
+              <div className="feature-box">
+                <Link to={`/book/${book.id}`} className="link" key={book.id}>
+                  <img
+                    className="books-img"
+                    src={`http://localhost:8800/uploads/${book.cover}`}
+                    alt="card_image"
+                  />
+
+                  <div className="feature-info">
+                    <p className="feature-title">{book.title}</p>
+                    <small className="feature-author">{book.author}</small>
+                    <h5 className="feature-price">
+                      {book.price} <MdEuroSymbol />
+                    </h5>
+                  </div>
+                </Link>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );
