@@ -45,3 +45,22 @@
  margin-top: 8px;
  margin-bottom: 20px;
 }
+
+.feature-container {
+    position: relative;
+     }
+
+
+     .feature-container .swiper-pagination{
+        margin: auto;
+        margin-top: 60px;
+     }
+
+     .feature-btn{
+      
+      margin: auto;
+      margin-right: 0;
+      margin-top: -40px;
+     }
+
+

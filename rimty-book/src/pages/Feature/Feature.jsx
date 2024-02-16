@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { MdEuroSymbol } from "react-icons/md";
+import { BsArrowReturnRight } from "react-icons/bs";
 // // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -35,7 +36,7 @@ export default function Feature() {
       <span className="section-subtitle">Some of my favourite books!</span>
       <div className="container feature-container col-xxl-8 px-2 py-3">
         <Swiper
-          slidesPerView={3}
+          slidesPerView={4}
           spaceBetween={30}
           pagination={{
             clickable: true,
@@ -69,6 +70,15 @@ export default function Feature() {
               </div>
             </SwiperSlide>
           ))}
+
+          <div className="feature-border container"></div>
+
+          <div className="swiper-pagination"></div>
+
+          <Link to="*" className="btn feature-btn">
+            View all books
+            <BsArrowReturnRight />{" "}
+          </Link>
         </Swiper>
       </div>
     </section>
