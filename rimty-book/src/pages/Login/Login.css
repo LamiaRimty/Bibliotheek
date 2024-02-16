@@ -1,0 +1,17 @@
+.wrapper{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* padding-right: 0; */
+   }
+
+   .login-input{
+    margin: 10px;
+    font-size: 24px;
+   border-bottom: 1px solid grey;
+   }
+   .login-input{
+       color: rgb(25, 5, 5);
+       
+   }
+   

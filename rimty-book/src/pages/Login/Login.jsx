@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/login", {
+      const response = await fetch(`http://localhost:8800/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const Login = () => {
     <section id="login">
       <div className="container wrapper px-4 py-1 my-5 text-center">
         <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
           <label for="username">Username</label>
           <input
             className="login-input"
