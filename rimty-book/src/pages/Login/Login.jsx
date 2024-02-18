@@ -30,31 +30,48 @@ const Login = () => {
 
   return (
     <section id="login">
-      <div className="container wrapper px-4 py-1 my-5 text-center">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit} className="form">
-          <label for="username">Username</label>
-          <input
-            className="login-input"
-            type="email"
-            name="email"
-            placeholder="email"
-            value={credentials.email}
-            onChange={handleChange}
-          />
-          <label for="password">Password</label>
-          <input
-            className="login-input"
-            type="password"
-            name="password"
-            placeholder="password"
-            value={credentials.password}
-            onChange={handleChange}
-          />
-          <button type="submit" className="button">
-            Login
-          </button>
-        </form>
+      <div className="container signlog-container signuplogin-wrap">
+        <div className="html">
+          <h2 className="signlog">Login</h2>
+          <form onSubmit={handleSubmit} className="form">
+            <div className="formGroup">
+              <label for="username">Username</label>
+              <input
+                className="login-input"
+                type="email"
+                name="email"
+                placeholder="email"
+                value={credentials.email}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="formGroup">
+              <label for="password">Password</label>
+              <input
+                className="login-input"
+                type="password"
+                name="password"
+                placeholder="password"
+                value={credentials.password}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="formGroup">
+              <input id="check" type="checkbox" class="check" checked />
+              <label for="check">
+                <span class="icon"></span> Keep me Signed in
+              </label>
+            </div>
+
+            <div className="formGroup">
+              <button type="submit" className="button">
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   );

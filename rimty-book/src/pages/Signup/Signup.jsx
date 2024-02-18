@@ -1,4 +1,5 @@
 // Signup.js
+import "./Signup.css";
 import React, { useState } from "react";
 
 const Signup = () => {
@@ -31,59 +32,61 @@ const Signup = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="formGroup">
-          <label>Your Name</label>
-          <input
-            type="text"
-            name="username"
-            value={userData.username}
-            onChange={handleChange}
-            placeholder="Username"
-          />
-        </div>
+    <div className="container signlog-container signuplogin-wrap">
+      <div className="html">
+        <h2>Signup</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="formGroup">
+            <label>Your Name</label>
+            <input
+              type="text"
+              name="username"
+              value={userData.username}
+              onChange={handleChange}
+              placeholder="Username"
+            />
+          </div>
 
-        <div className="formGroup">
-          <label>Your Email</label>
-          <input
-            type="email"
-            name="email"
-            value={userData.email}
-            onChange={handleChange}
-            placeholder="Email"
-          />
-        </div>
+          <div className="formGroup">
+            <label>Your Email</label>
+            <input
+              type="email"
+              name="email"
+              value={userData.email}
+              onChange={handleChange}
+              placeholder="Email"
+            />
+          </div>
 
-        <div className="formGroup">
-          <label>Your Password</label>
-          <input
-            type="password"
-            name="password"
-            value={userData.password}
-            onChange={handleChange}
-            placeholder="Password"
-          />
-        </div>
+          <div className="formGroup">
+            <label>Your Password</label>
+            <input
+              type="password"
+              name="password"
+              value={userData.password}
+              onChange={handleChange}
+              placeholder="Password"
+            />
+          </div>
 
-        <div className="formGroup">
-          <label>Confirm Password</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            value={userData.confirmPassword}
-            onChange={handleChange}
-            placeholder="Confirm Password"
-          />
-        </div>
+          <div className="formGroup">
+            <label>Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              value={userData.confirmPassword}
+              onChange={handleChange}
+              placeholder="Confirm Password"
+            />
+          </div>
 
-        <div className="formGroup">
-          <button type="submit" className="button">
-            Signup
-          </button>
-        </div>
-      </form>
+          <div className="formGroup">
+            <button type="submit" className="button">
+              Signup
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

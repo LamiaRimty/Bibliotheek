@@ -1,0 +1,34 @@
+
+.signlog-container{
+    background-color: beige;
+    margin-top: 60px;
+    padding: 20px;
+}
+.signuplogin-wrap{
+    width:100%;
+	/* margin:auto; */
+	max-width:525px;
+	min-height:670px;
+	position:relative;
+    /* https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsX29mZmljZV8zMl9hX2Nsb3NlLXVwX3Bob3RvX29mX2FfYmxhbmtfYm9va19wYWNrYWdpbmdfbV9kYmUyNDhiMS0yMDJlLTRjMDAtOTIzMy1jZWIyZTdmMTA5Y2JfMS5qcGc.jpg */
+	background:url(https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsX29mZmljZV8zMl9taW5pbWFsX2Nsb3NlX3VwX3Bob3RvX29mX2Ffb3Blbl9ib29rX29uX2dyZV82NGY4NWZkYS05OTNjLTQ4ZWMtODY3OS01M2VlMWM3ZDg0NTNfMS5qcGc.jpg) no-repeat center;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+.formGroup{
+ 
+ margin: 10px 10px;
+}
+
+.html{
+    width:100%;
+	height:100%;
+	/* position:absolute; */
+	padding:90px 50px 70px;
+	/* background:rgba(190, 150, 124, 0.9); */
+}
+
+.signlog{
+    text-align: center;
+    color: var(--first-color);
+}

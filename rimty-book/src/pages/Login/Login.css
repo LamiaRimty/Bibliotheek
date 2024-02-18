@@ -1,9 +1,4 @@
-.wrapper{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    /* padding-right: 0; */
-   }
+
 
    .login-input{
     margin: 10px;
