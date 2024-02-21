@@ -36,13 +36,17 @@ img{
 
 /* css experi */
 
+#books{
+    display: flex;
+    gap:10px;
+    }
+
 .main {
     max-width: 1200px;
     margin: 0 auto;
   }
 .cards {
-    display: grid;
-    grid-template-columns:repeat(4,1fr);
+
     list-style: none;
     margin: 0;
     padding: 10px;
@@ -52,13 +56,14 @@ img{
     text-align: center;
   
   }
+
   .card{
   
     align-items: center;
     justify-content: center;
     text-align: center;
- height: 450px;
- width: 450px;
+  height: 500px;
+  width: 410px;
 }
 
 .books-img{
@@ -73,7 +78,8 @@ img{
 .cards_item{
 
     background:var(--first-color);
-    padding: 5px;
+   box-shadow: 2px 2px 4px #463737;
+    margin: 20px ;
     border-radius:10px;
     transition: var(-transition);
     margin: 10px;
