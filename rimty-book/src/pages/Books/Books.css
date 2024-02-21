@@ -35,16 +35,17 @@ img{
 /* css Eexperi */
 
 /* css experi */
+
 .main {
     max-width: 1200px;
     margin: 0 auto;
   }
 .cards {
     display: grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(4,1fr);
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +53,7 @@ img{
   
   }
   .card{
-   
+  
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -61,14 +62,16 @@ img{
 }
 
 .books-img{
+    padding: 20px;
     height: 300px;
     width: 200px;
     
-    background-color:#ABC4AA;
+    
 }
 
 
 .cards_item{
+
     background:var(--first-color);
     padding: 5px;
     border-radius:10px;
@@ -106,7 +109,13 @@ img{
  }
  
  
- 
+ .card-price{
+    margin-top: -10px;
+    font-size: 16px;
+    font-weight:medium; 
+    text-align: left;
+    color:grey;
+ }
  
  
  .link{

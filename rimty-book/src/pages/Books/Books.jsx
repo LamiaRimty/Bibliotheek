@@ -26,7 +26,7 @@ const Books = () => {
         {/* Card Experiment */}
 
         {/* Card Experiment */}
-        <div className="row">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           {books.map((book) => (
             <Link to={`/book/${book.id}`} className="link" key={book.id}>
               <div className="col main animate__animated animate__zoomInUp">
@@ -50,10 +50,22 @@ const Books = () => {
                     </div>
                   </li>
                 </ul>
+                {/* <button
+                className="delete-btn"
+                onClick={() => handleDelete(book.id)}
+              >
+                Delete
+              </button>
+              <button className="update-btn">
+                <Link to={`/updatebook/${book.id}`}>Update</Link>
+              </button> */}
               </div>
             </Link>
           ))}
         </div>
+        {/* <button className="button">
+        <Link to="/addbook">Add a new Book</Link>
+      </button> */}
       </div>
     </section>
   );

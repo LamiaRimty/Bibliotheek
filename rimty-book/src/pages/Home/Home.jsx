@@ -28,7 +28,7 @@ function Home() {
                       className="form-control "
                       //me-2
                       type="text"
-                      placeholder="Whgat's on your mind?"
+                      placeholder="What's on your mind?"
                       aria-label="Search"
                     />
                     <button type="submit" className="flex flex-c" size={32}>
