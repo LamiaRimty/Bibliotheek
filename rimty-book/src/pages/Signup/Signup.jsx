@@ -1,33 +1,29 @@
 // Signup.js
 import "./Signup.css";
 import React, { useState } from "react";
+import axios from "axios";
 
 const Signup = () => {
-  const [userData, setUserData] = useState({
+  const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
-    confirmPassword: "",
   });
 
   const handleChange = (e) => {
-    setUserData({ ...userData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:8800/signup`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
-      const data = await response.json();
-      console.log(data); // handle response from server
+      const response = await axios.post(
+        "http://localhost:8800/signup",
+        formData
+      );
+      console.log(response.data); // Handle success response
     } catch (error) {
-      console.error("Error:", error);
+      console.error(error.response.data); // Handle error response
     }
   };
 
@@ -41,9 +37,9 @@ const Signup = () => {
             <input
               type="text"
               name="username"
-              value={userData.username}
-              onChange={handleChange}
               placeholder="Username"
+              value={formData.username}
+              onChange={handleChange}
             />
           </div>
 
@@ -52,9 +48,9 @@ const Signup = () => {
             <input
               type="email"
               name="email"
-              value={userData.email}
-              onChange={handleChange}
               placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
             />
           </div>
 
@@ -63,20 +59,9 @@ const Signup = () => {
             <input
               type="password"
               name="password"
-              value={userData.password}
-              onChange={handleChange}
               placeholder="Password"
-            />
-          </div>
-
-          <div className="formGroup">
-            <label>Confirm Password</label>
-            <input
-              type="password"
-              name="confirmPassword"
-              value={userData.confirmPassword}
+              value={formData.password}
               onChange={handleChange}
-              placeholder="Confirm Password"
             />
           </div>
 

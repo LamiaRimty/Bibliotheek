@@ -60,11 +60,11 @@ export default function Feature() {
                   />
 
                   <div className="feature-info">
-                    <h4 className="feature-title">{book.title}</h4>
+                    <h6 className="feature-title">{book.title}</h6>
                     <small className="feature-author">{book.author}</small>
-                    <h5 className="feature-price">
+                    <h6 className="feature-price">
                       {book.price} <MdEuroSymbol />
-                    </h5>
+                    </h6>
                   </div>
                 </Link>
               </div>

@@ -5,7 +5,7 @@
 }
 .navbar{
     background-color: var(--body-color);
-  
+  /* position:fixed; */
 background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
 }
 .navbar-brand{
@@ -19,7 +19,7 @@ background-image: url("https://www.transparenttextures.com/patterns/cartographer
   }
 
 #header-img{
-
+    
     border-radius: 50%;
     height: 60px;
     width: 60px;
