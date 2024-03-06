@@ -3,6 +3,7 @@ import "./Signup.css";
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Import useNavigate instead of useHistory
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -75,12 +76,11 @@ const Signup = () => {
               Signup
               {/* </a> */}
             </button>
-
-            <p className="havacc">
-              Already have an account? <a href="/login">Login </a>
-            </p>
           </div>
         </form>
+        <p className="havacc">
+          Already have an account? <Link to="/login"> Login</Link>
+        </p>
       </div>
     </div>
   );

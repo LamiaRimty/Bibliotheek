@@ -1,30 +1,43 @@
 // Login.js
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+//used the useState hook to manage form data. formData object contains email and password fields, initialized with empty strings.
 const Login = () => {
-  const [credentials, setCredentials] = useState({
+  const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
+  const navigate = useNavigate();
+
+  //event handler function to update the form data state whenever the user types in the input fields.
   const handleChange = (e) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  // const handleChange = (e) => {
+  //   const { name, value, type, checked } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: type === 'checkbox' ? checked : value
+  //   });
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:8800/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(credentials),
-      });
-      const data = await response.json();
-      console.log(data); // handle response from server
+      const response = await axios.post(
+        "http://localhost:8800/login",
+        formData
+      );
+      console.log(response.data); // Handle success response
+
+      // Redirect to homepage after successful login
+      navigate("/"); // Redirect to the homepage ('/')
     } catch (error) {
-      console.error("Error:", error);
+      console.error(error.response.data); // Handle error response
     }
   };
 
@@ -37,11 +50,10 @@ const Login = () => {
             <div className="formGroup">
               <label for="username">Username</label>
               <input
-                className="login-input"
                 type="email"
                 name="email"
-                placeholder="email"
-                value={credentials.email}
+                placeholder="Email"
+                value={formData.email}
                 onChange={handleChange}
               />
             </div>
@@ -49,31 +61,34 @@ const Login = () => {
             <div className="formGroup">
               <label for="password">Password</label>
               <input
-                className="login-input"
                 type="password"
                 name="password"
-                placeholder="password"
-                value={credentials.password}
+                placeholder="Password"
+                value={formData.password}
                 onChange={handleChange}
               />
             </div>
 
-            <div className="formGroup">
-              <input id="check" type="checkbox" class="check" checked />
-              <label for="check">
-                <span class="icon">Keep me Signed in</span>
-              </label>
-            </div>
+            {/* <div className="formGroup">
+              <input
+                type="checkbox"
+                name="keepSignedIn"
+                id="keepSignedIn"
+                checked={formData.keepSignedIn}
+                onChange={handleChange}
+              />
+              <label htmlFor="keepSignedIn">Keep me signed in</label>
+            </div> */}
 
             <div className="formGroup">
               <button type="submit" className="button">
                 Login
               </button>
             </div>
-            <p className="havacc">
-              Don't you have an account? <a href="/signup"> Signup </a>
-            </p>
           </form>
+          <p className="havacc">
+            Don't you have an account?<Link to="/signup"> Signup</Link>
+          </p>
         </div>
       </div>
     </section>
