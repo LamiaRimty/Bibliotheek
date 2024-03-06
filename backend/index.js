@@ -1,7 +1,13 @@
+//index.js
 import express from "express"
 import mysql from "mysql"
 import cors from "cors"
 import multer from 'multer';
+import bcrypt from 'bcrypt';
+// Import the login router
+// import loginRouter from './routes/login.js';
+
+
 
 const app= express()
 
@@ -29,11 +35,14 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-
-
+// Integrate the login router under the '/api' route 
+// Integrate the login router under the '/api' route 
+// app.use('/api/login', loginRouter);
 app.use(express.json())  //Express SERVER MIDDLEWARE 
 app.use(cors())//active axios localhost to Books.jsx
 app.use('/uploads', express.static('uploads'));
+
+
 
 
 app.get("/",(req,res)=>{
@@ -46,15 +55,16 @@ app.get("/books",(req,res)=>{
   const q= "SELECT * FROM testbook.books";
   db.query(q,(err,data)=>{
     if(err) return res.json(err)
+    console.log("Blog Data:", data);
     return res.json(data)
   })
 })
 
 app.get("/book/:id",(req,res)=>{
   const bookId = req.params.id;
-  const q = "SELECT * FROM testbook.books WHERE id = ?"
+  const q = "SELECT * FROM testbook.books WHERE id = ? "
 
-  db.query(q,[blogId],(err,data)=>{
+  db.query(q,[bookId],(err,data)=>{
   
     if (err) throw err;
       res.json(data[0]);
@@ -63,25 +73,25 @@ app.get("/book/:id",(req,res)=>{
 
 //create a new book
 //INSERT INTO table_name(column_1,column_2,column_3) VALUES (value_1,value_2,value_3);
-app.post("/books",(req,res)=>{
-    const q = "INSERT INTO books (`title`,`author`,`desc`,`price`,`cover`) VALUES (?)";
+app.post("/books", upload.single('cover'),(req,res)=>{
+    const q = "INSERT INTO books (`cover`,`title`,`author`,`price`,`desc`) VALUES (? , ? , ? , ? , ?)";
     const values=[
-
+        req.file.filename,
         req.body.title,
         req.body.author,
-        req.body.desc,
         req.body.price,
-        req.body.cover,
+        req.body.desc  
     ];
 
-    db.query(q,[values],(err,data)=>{
-        if(err) return res.json(err)
+    db.query(q,values,(err,data)=>{
+        if(err) return res.json(err);
+        console.log("Image Path:", req.file.filename);
         return res.json("Wow,Book has been created!")
       })
 })
 
 
-app.delete("/books/:id",(req,res)=>{
+app.delete("/book/:id",(req,res)=>{
   const bookId = req.params.id;
   const q= "DELETE FROM books WHERE id = ?"
 
@@ -91,28 +101,72 @@ app.delete("/books/:id",(req,res)=>{
   })
 })
 
-app.put("/books/:id",(req,res)=>{
+app.put("/book/:id",(req,res)=>{
+  console.log("Received update request:", req.body);
   const bookId = req.params.id;
-  const q= "UPDATE  books SET `title`= ?,`author`= ?,`desc`= ?,`price`= ?,`cover`= ?  WHERE id = ?";
+  const q= "UPDATE  books SET `cover`= ? , `title`= ? ,`author`= ?, `price`= ? ,`desc`= ?  WHERE `id` = ?";
   const values=[
-
+    req.body.cover,
     req.body.title,
     req.body.author,
-    req.body.desc,
     req.body.price,
-    req.body.cover,
+    req.body.desc,
+    bookId
+    
 ];
 
 
-  db.query(q,[...values,bookId],(err,data)=>{
+  db.query(q,[...values],(err,data)=>{
     if(err) return res.json(err)
     return res.json("Book has been Succesfully updated!")
   })
 })
 
 
+app.post('/signup', async (req, res) => {
+  const { username, email, password } = req.body;
+
+  // Hash the password before storing it in the database
+  const hashedPassword = bcrypt.hashSync(password, 10);
+
+  // Insert new user into database
+  db.query('INSERT INTO users (username, email, password) VALUES (?, ?, ?)', [username, email, hashedPassword], (error, results) => {
+    if (error) {
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+
+    // User registered successfully
+    return res.status(201).json({ message: 'User registered successfully' });
+  });
+});
 
 
+
+
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  // Fetch user from database by email
+  db.query('SELECT * FROM users WHERE email = ?', [email], async (error, results) => {
+    if (error) {
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+
+    if (!results.length) {
+      return res.status(401).json({ message: 'Invalid email or password' });
+    }
+
+    // Compare password
+    const user = results[0];
+    const isPasswordMatch = await bcrypt.compare(password, user.password);
+    if (!isPasswordMatch) {
+      return res.status(401).json({ message: 'Invalid email or password' });
+    }
+
+    // User authenticated successfully
+    return res.status(200).json({ message: 'Logged in successfully' });
+  });
+});
 
 app.listen(8800,()=>{
     console.log("Connected to bookbackend!")
