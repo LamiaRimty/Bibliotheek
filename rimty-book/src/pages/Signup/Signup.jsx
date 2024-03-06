@@ -2,7 +2,7 @@
 import "./Signup.css";
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Import useNavigate instead of useHistory
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ const Signup = () => {
     email: "",
     password: "",
   });
-  const history = useHistory(); // Initialize useHistory hook
+  const navigate = useNavigate(); // Initialize useNavigate hook
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -25,7 +25,7 @@ const Signup = () => {
       console.log(response.data); // Handle success response
 
       // Redirect to homepage after successful signup
-      history.push("/"); // Redirect to the homepage ('/')
+      navigate("/"); // Redirect to the homepage ('/')
     } catch (error) {
       console.error(error.response.data); // Handle error response
     }
