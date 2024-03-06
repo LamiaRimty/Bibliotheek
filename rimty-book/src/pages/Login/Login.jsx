@@ -61,7 +61,7 @@ const Login = () => {
             <div className="formGroup">
               <input id="check" type="checkbox" class="check" checked />
               <label for="check">
-                <span class="icon"></span> Keep me Signed in
+                <span class="icon">Keep me Signed in</span>
               </label>
             </div>
 
@@ -70,6 +70,9 @@ const Login = () => {
                 Login
               </button>
             </div>
+            <p className="havacc">
+              Don't you have an account? <a href="/signup"> Signup </a>
+            </p>
           </form>
         </div>
       </div>

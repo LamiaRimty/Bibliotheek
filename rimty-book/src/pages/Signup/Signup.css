@@ -32,3 +32,14 @@
     text-align: center;
     color: var(--first-color);
 }
+
+.signlogbtn{
+
+color:aliceblue;
+}
+
+.havacc{
+	color: aliceblue;
+    align-items:center;
+    justify-content: center;
+}

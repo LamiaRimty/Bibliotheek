@@ -2,6 +2,7 @@
 import "./Signup.css";
 import React, { useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +10,7 @@ const Signup = () => {
     email: "",
     password: "",
   });
-
+  const history = useHistory(); // Initialize useHistory hook
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -22,6 +23,9 @@ const Signup = () => {
         formData
       );
       console.log(response.data); // Handle success response
+
+      // Redirect to homepage after successful signup
+      history.push("/"); // Redirect to the homepage ('/')
     } catch (error) {
       console.error(error.response.data); // Handle error response
     }
@@ -67,8 +71,14 @@ const Signup = () => {
 
           <div className="formGroup">
             <button type="submit" className="button">
+              {/* <a className="signlogbtn" href="/"> */}
               Signup
+              {/* </a> */}
             </button>
+
+            <p className="havacc">
+              Already have an account? <a href="/login">Login </a>
+            </p>
           </div>
         </form>
       </div>
