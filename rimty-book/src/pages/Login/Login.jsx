@@ -48,7 +48,7 @@ const Login = () => {
           <h2 className="signlog">Login</h2>
           <form onSubmit={handleSubmit} className="form">
             <div className="formGroup">
-              <label for="username">Username</label>
+              <label for="Email">Email</label>
               <input
                 type="email"
                 name="email"

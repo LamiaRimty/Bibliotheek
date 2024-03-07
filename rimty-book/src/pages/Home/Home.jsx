@@ -1,8 +1,7 @@
 import "./Home.css";
 import Books from "../Books/Books";
 import Feature from "../Feature/Feature";
-import { FaSearch } from "react-icons/fa";
-// import searchForm from "../searchForm/searchForm";
+import SearchForm from "../searchForm/SearchForm";
 
 function Home() {
   return (
@@ -17,46 +16,10 @@ function Home() {
             src="./images/book-shelf-landscape.jpg"
             alt="cover"
           />
-          <h1 className="home-title">What's yourbook of choice?</h1>
 
           <div className="search-form animate__animated animate__zoomIn 2s">
-            <div className="container">
-              <div className="search-form-content">
-                <form className="search-form">
-                  <div className="search-form-elem flex flex-sb bg-white">
-                    <input
-                      className="form-control "
-                      //me-2
-                      type="text"
-                      placeholder="What's on your mind?"
-                      aria-label="Search"
-                    />
-                    <button type="submit" className="flex flex-c" size={32}>
-                      {" "}
-                      <FaSearch />
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
+            <SearchForm />
           </div>
-          {/* <div className="content animate__animated animate__zoomIn 2s">
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button
-                className="btn home-btn btn-outline-light btn-lg"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
-            <p>Online book sharing platform</p>
-          </div> */}
         </div>
       </section>
       <Feature />
