@@ -168,6 +168,22 @@ app.post('/login', async (req, res) => {
   });
 });
 
+
+// Search endpoint
+app.get("/search", (req, res) => {
+  const searchQuery = req.query.q; // Get the search query from request query parameters
+  const q = "SELECT * FROM testbook.books WHERE title LIKE ?"; // SQL query to search for books by title
+  const searchValue = `%${searchQuery}%`; // Add wildcard '%' to perform a partial match search
+
+  db.query(q, [searchValue], (err, data) => {
+    if (err) {
+      return res.status(500).json({ message: "Internal server error" });
+    }
+    return res.json(data);
+  });
+});
+
+
 app.listen(8800,()=>{
     console.log("Connected to bookbackend!")
 })
