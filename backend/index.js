@@ -169,7 +169,7 @@ app.post('/login', async (req, res) => {
 });
 
 
-// Search endpoint
+
 // Add a new route for searching books by name
 app.get("/search", (req, res) => {
   const searchQuery = req.query.q; // Get the search query from request query parameters
@@ -178,7 +178,7 @@ app.get("/search", (req, res) => {
 
   db.query(q, [searchValue, searchValue], (err, data) => {
     if (err) {
-      return res.status(500).json({ message: "Internal server error" });
+      return res.status(500).json({ message: "Book not found because Internal server error!" });
     }
     return res.json(data);
   });
