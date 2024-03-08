@@ -22,9 +22,10 @@ function Search() {
 
   return (
     <section id="Search">
-      <h1 className="search-title">What's your book choice?</h1>
-      <div className="search-container">
+      <div className="search-container col-xxl-8 px-2 py-3 ">
+        <h1 className="search-title">What's your book choice?</h1>
         <input
+          className="search-input"
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
@@ -35,8 +36,13 @@ function Search() {
         {error && <div className="error">{error}</div>}
         <ul>
           {searchResults.map((book) => (
-            <li key={book.id}>
-              <img src={book.cover} alt={book.title} />
+            <li key={book.id} className="bookfound">
+              {/* <img src={book.cover} alt={book.title} /> */}
+              <img
+                className="search-img"
+                src={`http://localhost:8800/uploads/${book.cover}`}
+                alt="search-img"
+              />
               <div>
                 <h3>{book.title}</h3>
                 <p>Author: {book.author}</p>
