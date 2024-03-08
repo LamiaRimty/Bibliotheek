@@ -170,12 +170,13 @@ app.post('/login', async (req, res) => {
 
 
 // Search endpoint
+// Add a new route for searching books by name
 app.get("/search", (req, res) => {
   const searchQuery = req.query.q; // Get the search query from request query parameters
-  const q = "SELECT * FROM testbook.books WHERE title LIKE ?"; // SQL query to search for books by title
+  const q = "SELECT * FROM books WHERE title LIKE ? OR author LIKE ?"; // SQL query to search for books by title or author
   const searchValue = `%${searchQuery}%`; // Add wildcard '%' to perform a partial match search
 
-  db.query(q, [searchValue], (err, data) => {
+  db.query(q, [searchValue, searchValue], (err, data) => {
     if (err) {
       return res.status(500).json({ message: "Internal server error" });
     }
