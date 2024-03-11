@@ -89,3 +89,10 @@
     color: #675D50;
     text-decoration: none;
     }
+
+    .bookfound{
+  
+        /* display: block; */
+        color :var(--first-color);
+        background-color: bisque;
+    }

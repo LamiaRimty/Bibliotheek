@@ -1,7 +1,7 @@
 #Search{
    
     color: aliceblue;
-    position: absolute;
+    position: relative;
     
 }
 
@@ -9,11 +9,11 @@
     width: 400px;
 }
 
-.search-container{
+/* .search-container{
     background-color: red;
  padding: 20px;
  display: block;
-}
+} */
 
 .search-title{
      font-size: 50px;
@@ -21,14 +21,32 @@
     color: var(--text-color);
 }
 
-.bookfound{
-  
-    display: block;
-    color :var(--first-color);
-    background-color: bisque;
-}
+
 
 .search-img{
     width: 50px;
     height: 50px;
 }
+
+
+.search-form-content{
+    color:beige;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .overlay{
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.1)
+
+} */
