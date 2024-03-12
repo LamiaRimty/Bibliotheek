@@ -29,7 +29,7 @@
  --text-color-light:#C7B7A3;
  --input-color:#ABC4AA;
  --body-color:#FFF3E4 ;
- --container-color:#FFF3E4 ;
+ --container-color:#EED6C4;
  --scroll-bar-color:#CEDEBD;
  --scroll-thumb-color:#9EB384;
  --header-back:
@@ -96,6 +96,7 @@ text-decoration: none;
 
 section{
 width: 100%;
+
 
 /* background-color: var(--container-color);
 background-image: url("https://www.transparenttextures.com/patterns/cartographer.png"); */

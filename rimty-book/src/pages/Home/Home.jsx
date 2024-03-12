@@ -36,17 +36,23 @@ function Home() {
           <ul>
             {searchResults.map((book) => (
               <Link to={`/book/${book.id}`} key={book.id}>
-                <h2 className="search-results">Your search results...</h2>
+                <h2 className="search-results">...</h2>
+
                 <li key={book.id}>
-                  <img
-                    src={`http://localhost:8800/uploads/${book.cover}`}
-                    alt={book.title}
-                  />
-                  <div>
-                    <h3 className="card-title">{book.title}</h3>
-                    <p className="card-author">Author: {book.author}</p>
-                    <p className="card-price">Price: {book.price}</p>
-                    <p className="card-desc">Description: {book.desc}</p>
+                  <div className="container search-container inner-search row flex-lg-row align-items-center">
+                    <div className=" col-10 col-sm-8 col-lg-6 justify-content-center ">
+                      <img
+                        className="search-img"
+                        src={`http://localhost:8800/uploads/${book.cover}`}
+                        alt={book.title}
+                      />
+                    </div>
+                    <div className=" col-10 col-sm-8 col-lg-6 search-info">
+                      <h3 className="card-title">{book.title}</h3>
+                      <p className="card-author">Author: {book.author}</p>
+                      <p className="card-price">Price: {book.price}</p>
+                      <p className="card-desc">Description: {book.desc}</p>
+                    </div>
                   </div>
                 </li>
               </Link>

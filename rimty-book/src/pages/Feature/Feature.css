@@ -78,3 +78,7 @@
 .feature-price{
   color: var(--text-color-alt);
 }
+
+#feature{
+  margin-bottom: 200px;
+}
