@@ -23,9 +23,8 @@ const Books = () => {
   return (
     <section id="books">
       <div className="container">
-        {/* Card Experiment */}
-
-        {/* Card Experiment */}
+        <h2 className="section-title">Best Selling Items</h2>
+        <span className="section-subtitle">World's Famous Books...</span>
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           {books.map((book) => (
             <Link to={`/book/${book.id}`} className="link" key={book.id}>
@@ -44,28 +43,17 @@ const Books = () => {
                         <h2 className="card-title">{book.title}</h2>
                         <p className="card-author">{book.author}</p>
                         <p className="card-price">
-                          {book.price} <MdEuroSymbol />
+                          <MdEuroSymbol />
+                          {book.price}
                         </p>
                       </div>
                     </div>
                   </li>
                 </ul>
-                {/* <button
-                className="delete-btn"
-                onClick={() => handleDelete(book.id)}
-              >
-                Delete
-              </button>
-              <button className="update-btn">
-                <Link to={`/updatebook/${book.id}`}>Update</Link>
-              </button> */}
               </div>
             </Link>
           ))}
         </div>
-        {/* <button className="button">
-        <Link to="/addbook">Add a new Book</Link>
-      </button> */}
       </div>
     </section>
   );

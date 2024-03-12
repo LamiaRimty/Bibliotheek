@@ -63,7 +63,8 @@ export default function Feature() {
                     <h6 className="feature-title">{book.title}</h6>
                     <small className="feature-author">{book.author}</small>
                     <h6 className="feature-price">
-                      {book.price} <MdEuroSymbol />
+                      <MdEuroSymbol />
+                      {book.price}
                     </h6>
                   </div>
                 </Link>

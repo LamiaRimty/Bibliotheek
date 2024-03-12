@@ -96,3 +96,11 @@
         color :var(--first-color);
         background-color: bisque;
     }
+
+    .search-results{
+        color: var(--text-color-light);
+    }
+
+    .card-desc{
+color: var(--text-color);
+    }

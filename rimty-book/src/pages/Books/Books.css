@@ -1,40 +1,3 @@
-/* .App{
-    height: 100vh;
-    padding: 0px 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-} */
-
-/* .books{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.book{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items:center ;
-}
-
-img{
-    height: 300px;
-    width: 200px;
-    object-fit: cover;
-    background-color:#ABC4AA;
-} */
-
-
-
-
-/* css Eexperi */
-
-/* css experi */
 
 #books{
     display: flex;
@@ -46,7 +9,7 @@ img{
     margin: 0 auto;
   }
 .cards {
-
+  
     list-style: none;
     margin: 0;
     padding: 10px;
@@ -55,6 +18,14 @@ img{
     justify-content: center;
     text-align: center;
   
+  }
+  .card_content{
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center
   }
 
   .card{
@@ -76,10 +47,8 @@ img{
 
 
 .cards_item{
-
-    background:var(--first-color);
-   box-shadow: 2px 2px 4px #463737;
-    margin: 20px ;
+   box-shadow: 2px 2px 4px #efefef;
+    margin: 20px;
     border-radius:10px;
     transition: var(-transition);
     margin: 10px;
@@ -87,12 +56,12 @@ img{
  }
  
  .cards_item:hover{
-     border:1px solid var(--first-color-2nd);
+     border:1px solid var(--text-color-alt);
      background: transparent;
  }
  
    .card-title {
-     margin: 1.2rem 0;
+     margin: 10px 0;
      font-size: 20px;
      font-family:var(--body-font);
      font-weight: 700;
@@ -102,25 +71,27 @@ img{
      text-align: left;
    }
   
- 
+   .card-title:hover{
+    color:var(--text-color-alt);
+}
  .card-author{
      font-size: 16px;
-     color: var( --text-color-light);
+     color: var( --text-color);
      font-weight:medium; 
      text-align: left;
    
  }
  .card-author:hover{
-     color:teal;
+     color:var(--text-color-alt);
  }
  
  
  .card-price{
-    margin-top: -10px;
+ 
+    margin-top:-20px;
     font-size: 16px;
     font-weight:medium; 
-    text-align: left;
-    color:grey;
+    color:var(--text-color-alt);
  }
  
  

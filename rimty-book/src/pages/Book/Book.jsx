@@ -88,8 +88,8 @@ function Book() {
               <div className="authorprice-edit d-flex">
                 <p className="author">📝{bookPost.author}</p>
                 <p className="price">
-                  💵 {bookPost.price}
-                  <MdEuroSymbol />
+                  💵 <MdEuroSymbol />
+                  {bookPost.price}
                 </p>
                 <div className="buttons bookEdit">
                   <button

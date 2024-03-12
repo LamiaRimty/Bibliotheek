@@ -3,13 +3,9 @@
     --bs-nav-pills-link-active-color: #fff;
     --bs-nav-pills-link-active-bg:  var(--text-color-light);;
 }
-.navbar{
-    background-color: var(--body-color);
-  /* position:fixed; */
-/* background-image: url("https://www.transparenttextures.com/patterns/cartographer.png"); */
-}
+
 .navbar-brand{
-    /* right: 100px; */
+    
     font-size: 40px;
     font-weight: bold;
     font-family: fantasy;
@@ -18,13 +14,17 @@
 
   }
 
+  .navbar-brand:hover{
+    color: var( --text-color-alt);
+  }
+
 #header-img{
     
     border-radius: 50%;
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    background-color: var(--text-color-light);
+    /* background-color: var(--text-color-light); */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     rotate: 1deg;
     scale: 1.01;
@@ -37,16 +37,16 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: var( --title-color);
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .nav-link:hover{
     color: var(--text-color-light);
 }
 
-.active{
+#activelink{
     font-weight:500;
-    
+    color:var(--text-color-alt);
 }
 
 

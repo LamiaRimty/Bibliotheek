@@ -60,10 +60,21 @@
      }
 
      .feature-btn{
-      
+      font-weight: 500;
+      color:var(--text-color-light);
       margin: auto;
       margin-right: 0;
       margin-top: -40px;
      }
 
 
+.feature-title{
+  color:var(--text-color);
+}
+
+.feature-author{
+  color:var(--title-color);
+}
+.feature-price{
+  color: var(--text-color-alt);
+}
