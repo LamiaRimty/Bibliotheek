@@ -23,14 +23,15 @@
  --first-color-2nd:white;
  --first-color-alt: thistle;
  --first-color-lighter:#CEDEBD;
- --title-color:#AD8B73 ;
- --text-color:#FFFBE9;
-  --text-color-light:#E3CAA5;
+ --title-color:#6B4F4F;
+ --text-color:#483434; 
+  --text-color-light:#EED6C4;
  --input-color:#ABC4AA;
- --body-color: #AD8B73;
+ --body-color:#FFF3E4 ;
  --container-color:#CEAB93;
  --scroll-bar-color:#CEDEBD;
  --scroll-thumb-color:#9EB384;
+ --header-back:
 
   
   --body-font:font-family: 'Lora', serif;
@@ -65,7 +66,7 @@ body {
   background-color: var(--body-color);
  
   
-background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+/* background-image: url("https://www.transparenttextures.com/patterns/cartographer.png"); */
   font-family:'Lora', serif;;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -100,7 +101,7 @@ background-image: url("https://www.transparenttextures.com/patterns/cartographer
 }
 
 .section-title{
-color:var(--text-color);
+color:var(--title-color);
 font-size: 32px;
 
 }

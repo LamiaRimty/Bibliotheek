@@ -19,7 +19,7 @@ function Home() {
           <div className="overlay"></div>
           <img
             className="home-img"
-            src="./images/book-shelf-landscape.jpg"
+            src="https://dreieck.com/en/wp-content/uploads/sites/2/2023/03/how-to-draw-a-book.jpg"
             alt="cover"
           />
           <div className="search-form animate__animated animate__zoomIn 2s">
@@ -35,7 +35,7 @@ function Home() {
           <h2>Search Results</h2>
           <ul>
             {searchResults.map((book) => (
-              <li key={book.id} className="bookfound">
+              <li key={book.id}>
                 <img src={book.cover} alt={book.title} />
                 <div>
                   <h3>{book.title}</h3>
