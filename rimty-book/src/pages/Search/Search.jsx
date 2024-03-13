@@ -1,4 +1,5 @@
 // Search.js
+import "./Search.css";
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -19,11 +20,11 @@ function Search({ onSearchResults }) {
   };
 
   return (
-    <div className="container col-xxl-8 px-2 py-3">
-      <section id="Search">
-        <div className="container col-xxl-8 px-2 py-3">
-          <div className="search-form-content">
-            <h1 className="search-title">What's your book choice?</h1>
+    <section id="Search">
+      <div className="container col-xxl-8 px-2 py-3">
+        <div className="search-form-content">
+          <h1 className="search-form-title">What's Your Book of Choice?</h1>
+          <div className="search-form">
             <input
               placeholder="Write your book name here.."
               className="search-input"
@@ -34,11 +35,11 @@ function Search({ onSearchResults }) {
             <button className="button" onClick={handleSearch}>
               Search
             </button>
-            {error && <div className="error">{error}</div>}
           </div>
+          {error && <div className="error">{error}</div>}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 

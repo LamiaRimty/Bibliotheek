@@ -22,7 +22,7 @@ function Home() {
             src="https://dreieck.com/en/wp-content/uploads/sites/2/2023/03/how-to-draw-a-book.jpg"
             alt="cover"
           />
-          <div className="search-form animate__animated animate__zoomIn 2s">
+          <div className="search-result-form animate__animated animate__zoomIn 2s">
             <div>
               <Search onSearchResults={handleSearchResults} />
             </div>
@@ -39,7 +39,7 @@ function Home() {
                 <h2 className="search-results">...</h2>
 
                 <li key={book.id}>
-                  <div className="container search-container inner-search row flex-lg-row align-items-center">
+                  <div className="container search-result-container inner-search row flex-lg-row align-items-center">
                     <div className=" col-10 col-sm-8 col-lg-6 justify-content-center ">
                       <img
                         className="search-img"
