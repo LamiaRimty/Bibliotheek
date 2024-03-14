@@ -1,4 +1,4 @@
-// Signup.js
+// Signup.jsx
 import "./Signup.css";
 import React, { useState } from "react";
 import axios from "axios";

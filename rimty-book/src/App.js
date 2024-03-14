@@ -14,9 +14,12 @@ import Feature from "./pages/Feature/Feature";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
 
+
+import { AuthProvider } from './context/AuthContext';
+
 function App() {
   return (
-    
+    <AuthProvider>
     <Router>
       <div className="App">
         <Header />
@@ -33,6 +36,9 @@ function App() {
         <Footer />
       </div>
     </Router>
+  </AuthProvider>
+    
+
  
   );
 }

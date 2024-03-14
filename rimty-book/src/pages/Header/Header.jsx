@@ -1,4 +1,4 @@
-import { useAuth } from "../../AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
@@ -70,9 +70,14 @@ const Header = () => {
               {!currentUser && (
                 <>
                   <li className="nav-item">
-                    <Link to="/login">Login</Link>
-
-                    <Link to="/signup">Signup</Link>
+                    <Link to="/login" className="nav-link">
+                      Login
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/signup" className="nav-link">
+                      Signup
+                    </Link>
                   </li>
                 </>
               )}

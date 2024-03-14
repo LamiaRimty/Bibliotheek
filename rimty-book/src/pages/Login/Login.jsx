@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 //used the useState hook to manage form data. formData object contains email and password fields, initialized with empty strings.
 const Login = () => {
@@ -12,7 +12,7 @@ const Login = () => {
     password: "",
   });
 
-  const { login } = useAuth;
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   //event handler function to update the form data state whenever the user types in the input fields.
@@ -39,7 +39,11 @@ const Login = () => {
       // Redirect to homepage after successful login
       navigate("/"); // Redirect to the homepage ('/')
     } catch (error) {
-      console.error(error.response.data); // Handle error response
+      if (error.response) {
+        console.error(error.response.data); // If the response exists and contains data
+      } else {
+        console.error(error.message); // Fallback error message if the response is undefined
+      }
     }
   };
 
