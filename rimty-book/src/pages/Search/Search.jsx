@@ -32,7 +32,7 @@ function Search({ onSearchResults }) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <button className="button" onClick={handleSearch}>
+            <button className="search-button" onClick={handleSearch}>
               Search
             </button>
           </div>
