@@ -1,6 +1,9 @@
+import { useAuth } from "../../AuthContext";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
+  const { currentUser, logout } = useAuth();
   return (
     <section id="header">
       <nav className="navbar navbar-expand-lg bg-body-">
@@ -62,8 +65,33 @@ const Header = () => {
                 </a>
               </li>
             </ul>
+
             <ul className="d-flex navbar-nav">
-              <li className="nav-item">
+              {!currentUser && (
+                <>
+                  <li className="nav-item">
+                    <Link to="/login">Login</Link>
+
+                    <Link to="/signup">Signup</Link>
+                  </li>
+                </>
+              )}
+              {currentUser && (
+                <div>
+                  <span>{currentUser.name}</span>
+                  <img
+                    src={currentUser.photoUrl}
+                    alt="Profile"
+                    style={{
+                      width: "30px",
+                      height: "30px",
+                      borderRadius: "50%",
+                    }}
+                  />
+                  <button onClick={logout}>Logout</button>
+                </div>
+              )}
+              {/* <li className="nav-item">
                 <a className="nav-link" href="/login">
                   Login
                 </a>
@@ -72,7 +100,7 @@ const Header = () => {
                 <a className="nav-link" href="/signup">
                   Signup
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
