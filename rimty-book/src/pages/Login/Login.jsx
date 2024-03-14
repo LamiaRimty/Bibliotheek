@@ -1,8 +1,9 @@
-// Login.js
+// Login.jsx
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../AuthContext";
 
 //used the useState hook to manage form data. formData object contains email and password fields, initialized with empty strings.
 const Login = () => {
@@ -11,6 +12,7 @@ const Login = () => {
     password: "",
   });
 
+  const { login } = useAuth;
   const navigate = useNavigate();
 
   //event handler function to update the form data state whenever the user types in the input fields.
@@ -33,7 +35,7 @@ const Login = () => {
         formData
       );
       console.log(response.data); // Handle success response
-
+      login(response.data); // Assuming response.data includes user details
       // Redirect to homepage after successful login
       navigate("/"); // Redirect to the homepage ('/')
     } catch (error) {
