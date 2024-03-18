@@ -34,8 +34,8 @@ const Login = () => {
         "http://localhost:8800/login",
         formData
       );
-      console.log(response.data); // Handle success response
-      login(response.data); // Assuming response.data includes user details
+      console.log(response.data.userData); // Handle success response
+      login(response.data.userData); // Assuming response.data includes user details
       // Redirect to homepage after successful login
       navigate("/"); // Redirect to the homepage ('/')
     } catch (error) {

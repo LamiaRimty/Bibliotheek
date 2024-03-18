@@ -98,12 +98,14 @@
     }
 
     .search-img{
-        
+        border-radius: 5px;
         justify-content: center;
         align-items: center;
-        width: 60%;
-        height: 60%;
+         width: 60%;
+        height: 100%; 
+      
     }
+    
 
    .search-result-container{
     margin: 0;

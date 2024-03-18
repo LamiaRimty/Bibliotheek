@@ -4,6 +4,8 @@ import "./Header.css";
 
 const Header = () => {
   const { currentUser, logout } = useAuth();
+  console.log("Current user in Header:", currentUser);
+
   return (
     <section id="header">
       <nav className="navbar navbar-expand-lg bg-body-">
@@ -82,19 +84,29 @@ const Header = () => {
                 </>
               )}
               {currentUser && (
-                <div>
-                  <span>{currentUser.name}</span>
-                  <img
-                    src={currentUser.photoUrl}
-                    alt="Profile"
-                    style={{
-                      width: "30px",
-                      height: "30px",
-                      borderRadius: "50%",
-                    }}
-                  />
-                  <button onClick={logout}>Logout</button>
-                </div>
+                <>
+                  <li className="nav-item">
+                    <div className="nav-link">
+                      <img
+                        // src={currentUser.photoUrl}
+                        src="https://s3.amazonaws.com/cdn.tulips.com/images/large/Timeless-Tulip.jpg"
+                        alt="Profile"
+                        style={{
+                          width: "30px",
+                          height: "30px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                      <span> {currentUser.username}</span>
+                    </div>
+                  </li>
+                  <li className="nav-item">
+                    <button className="nav-link" onClick={logout}>
+                      {" "}
+                      Logout
+                    </button>
+                  </li>
+                </>
               )}
               {/* <li className="nav-item">
                 <a className="nav-link" href="/login">
