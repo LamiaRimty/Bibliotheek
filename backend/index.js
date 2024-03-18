@@ -147,7 +147,10 @@ app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   // Fetch user from database by email
-  db.query('SELECT * FROM users WHERE email = ?', [email], async (error, results) => {
+  db.query('SELECT username, email, password FROM users WHERE email = ?', [email], async (error, results) => {
+
+    
+    
     if (error) {
       return res.status(500).json({ message: 'Internal server error' });
     }
@@ -155,16 +158,26 @@ app.post('/login', async (req, res) => {
     if (!results.length) {
       return res.status(401).json({ message: 'Invalid email or password' });
     }
-
+    console.log("Received password:", password); // Assuming 'password' is the variable holding the client's password
     // Compare password
-    const user = results[0];
-    const isPasswordMatch = await bcrypt.compare(password, user.password);
-    if (!isPasswordMatch) {
-      return res.status(401).json({ message: 'Invalid email or password' });
-    }
-
+// Assuming the rest of your /login route remains unchanged
+const user = results[0];
+const isPasswordMatch = await bcrypt.compare(password, user.password); // Now 'user.password' is available for comparison
+if (!isPasswordMatch) {
+  return res.status(401).json({ message: 'Invalid email or password' });
+}
+// Continue with login success response if the password matches
+// After verifying the user's password...
     // User authenticated successfully
-    return res.status(200).json({ message: 'Logged in successfully' });
+    return res.status(200).json({
+      message: 'Logged in successfully',
+      userData: {
+        username: results[0].username,
+        email: results[0].email,
+        // Add any other user details you wish to include
+      },
+       
+      });
   });
 });
 
