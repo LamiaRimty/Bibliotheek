@@ -97,7 +97,10 @@ const Header = () => {
                           borderRadius: "50%",
                         }}
                       />
-                      <span> {currentUser.username}</span>
+                      <span className="current-name">
+                        {" "}
+                        {currentUser.username}
+                      </span>
                     </div>
                   </li>
                   <li className="nav-item">

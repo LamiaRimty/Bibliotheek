@@ -63,3 +63,11 @@
   /* margin-left: 20px; */
 
 }
+
+.current-name{
+    color: var(--text-color-alt);
+ font-family:fantasy;
+ font-weight: 800;
+ /* font-size: 15PX; */
+    
+}
