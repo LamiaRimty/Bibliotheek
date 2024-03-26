@@ -6,7 +6,7 @@ const AuthContext = createContext({ currentUser: null });
 export function useAuth() {
   return useContext(AuthContext); //you get access to the current user data and the login/logout functions.
 }
-
+//setCurrentUser({ ...userData, isAdmin: userData.isAdmin });
 export const AuthProvider = ({ children }) => {
   //pass down the authentication state (the current user) and functions (login and logout) to any child components. Inside AuthProvider,
   const [currentUser, setCurrentUser] = useState(null); //no user is logged in by default.

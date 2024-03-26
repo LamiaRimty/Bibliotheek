@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext"; // Make sure the path is correct
 import "./Book.css";
 import { BsPencilSquare } from "react-icons/bs";
 import { AiOutlineDelete } from "react-icons/ai";
@@ -9,6 +10,7 @@ import axios from "axios";
 
 function Book() {
   const { id } = useParams();
+  const { currentUser } = useAuth(); // Use the useAuth hook to get the current user
   const [bookPost, setBookPost] = useState([]);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -24,7 +26,7 @@ function Book() {
     fetchBookDetails();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  // }, [id]);
   const navigate = useNavigate();
   const handleDelete = async () => {
     try {
@@ -91,18 +93,21 @@ function Book() {
                   💵 <MdEuroSymbol />
                   {bookPost.price}
                 </p>
-                <div className="buttons bookEdit">
-                  <button
-                    className="button update-btn"
-                    onClick={() => setUpdateMode(true)}
-                  >
-                    <BsPencilSquare />
-                  </button>
 
-                  <button className="btn delete-btn" onClick={handleDelete}>
-                    <AiOutlineDelete />
-                  </button>
-                </div>
+                {currentUser && currentUser.isAdmin && !updateMode && (
+                  <div className="buttons bookEdit">
+                    <button
+                      className="button update-btn"
+                      onClick={() => setUpdateMode(true)}
+                    >
+                      <BsPencilSquare />
+                    </button>
+
+                    <button className="btn delete-btn" onClick={handleDelete}>
+                      <AiOutlineDelete />
+                    </button>
+                  </div>
+                )}
               </div>
 
               {updateMode ? (

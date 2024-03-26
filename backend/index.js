@@ -90,8 +90,20 @@ app.post("/books", upload.single('cover'),(req,res)=>{
       })
 })
 
+const verifyAdmin = (req, res, next) => {
+  if (req.user && req.user.isAdmin) {
+    next();
+  } else {
+    res.status(403).send("Access denied.");
+  }
+};
 
-app.delete("/book/:id",(req,res)=>{
+
+app.delete("/book/:id",verifyAdmin,(req,res)=>{
+  // Deletion logic here
+  if (!req.user.isAdmin) {
+    return res.status(403).send("Access denied.");
+  }
   const bookId = req.params.id;
   const q= "DELETE FROM books WHERE id = ?"
 
@@ -126,19 +138,27 @@ app.put("/book/:id",(req,res)=>{
 app.post('/signup', async (req, res) => {
   const { username, email, password } = req.body;
 
-  // Hash the password before storing it in the database
-  const hashedPassword = bcrypt.hashSync(password, 10);
-
-  // Insert new user into database
-  db.query('INSERT INTO users (username, email, password) VALUES (?, ?, ?)', [username, email, hashedPassword], (error, results) => {
-    if (error) {
-      return res.status(500).json({ message: 'Internal server error' });
+  // Check if an admin already exists
+  db.query('SELECT COUNT(*) AS admins FROM users WHERE isAdmin = true', async (err, result) => {
+    if (err) {
+      return res.status(500).json({ message: 'Internal server error during admin check.' });
     }
 
-    // User registered successfully
-    return res.status(201).json({ message: 'User registered successfully' });
+    // Automatically assign the first user as admin if no admins exist
+    const isAdmin = result[0].admins === 0;
+    const hashedPassword = bcrypt.hashSync(password, 10);
+
+    db.query('INSERT INTO users (username, email, password, isAdmin) VALUES (?, ?, ?, ?)', 
+             [username, email, hashedPassword, isAdmin], (error, results) => {
+      if (error) {
+        return res.status(500).json({ message: 'Internal server error during user registration.' });
+      }
+      // User registered successfully
+      return res.status(201).json({ message: 'User registered successfully', isAdmin });
+    });
   });
 });
+
 
 
 
@@ -195,6 +215,11 @@ app.get("/search", (req, res) => {
     }
     return res.json(data);
   });
+});
+
+app.post('/setAdmin/:userId', (req, res) => {
+  // Check if an admin already exists
+  // If yes, prevent setting another admin
 });
 
 
