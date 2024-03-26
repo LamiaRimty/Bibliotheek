@@ -1,4 +1,5 @@
 //index.js
+
 import express from "express"
 import mysql from "mysql"
 import cors from "cors"
@@ -42,8 +43,35 @@ app.use(express.json())  //Express SERVER MIDDLEWARE
 app.use(cors())//active axios localhost to Books.jsx
 app.use('/uploads', express.static('uploads'));
 
+import jwt from 'jsonwebtoken';
 
+// Existing import statements...
 
+const authenticate = (req, res, next) => {
+  try {
+    const token = req.headers.authorization.split(" ")[1]; // Assuming the format is Bearer <token>
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (error) {
+    res.status(401).send("Authentication failed.");
+  }
+};
+
+// app.post('/setAdmin/:userId', (req, res) => {
+//   // Check if an admin already exists
+//   // If yes, prevent setting another admin
+// });
+// // After your import statements and before route definitions
+
+const isAdmin = (req, res, next) => {
+  if (!req.user || !req.user.isAdmin) {
+    return res.status(403).send("Access denied. Admins only.");
+  }
+  next();
+};
+
+// Proceed with your route definitions below
 
 app.get("/",(req,res)=>{
     res.json("This is the bibliotheek's bookbackend")
@@ -99,19 +127,17 @@ const verifyAdmin = (req, res, next) => {
 };
 
 
-app.delete("/book/:id",verifyAdmin,(req,res)=>{
-  // Deletion logic here
-  if (!req.user.isAdmin) {
-    return res.status(403).send("Access denied.");
-  }
+app.delete("/book/:id", authenticate, isAdmin, (req, res) => {
+  // Only an authenticated admin can reach this point
   const bookId = req.params.id;
-  const q= "DELETE FROM books WHERE id = ?"
+  const q = "DELETE FROM books WHERE id = ?";
 
-  db.query(q,[bookId],(err,data)=>{
-    if(err) return res.json(err)
-    return res.json("Book has been Succesfully deleted!")
-  })
-})
+  db.query(q, [bookId], (err, data) => {
+    if (err) return res.status(500).json(err);
+    return res.json("Book has been successfully deleted!");
+  });
+});
+
 
 app.put("/book/:id",(req,res)=>{
   console.log("Received update request:", req.body);
@@ -217,10 +243,7 @@ app.get("/search", (req, res) => {
   });
 });
 
-app.post('/setAdmin/:userId', (req, res) => {
-  // Check if an admin already exists
-  // If yes, prevent setting another admin
-});
+
 
 
 app.listen(8800,()=>{
